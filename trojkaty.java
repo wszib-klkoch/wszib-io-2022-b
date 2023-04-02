@@ -31,6 +31,11 @@ class Trojkaty {
         float b = Float.valueOf(args[1]);
         float c = Float.valueOf(args[2]);
         
+	if(a < 0 || b < 0 || c < 0) {
+		System.out.println("Dlugosci bokow trojkata musza byc nieujemne!");
+		System.exit(2);
+	}
+
         jakiTrojkat(a, b, c);
     }
 }
