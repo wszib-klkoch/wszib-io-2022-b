@@ -9,6 +9,12 @@ class Trojkaty {
      * @param {float} b - Długość drugiego boku.
      * @param {float} c - Długość trzeciego boku.
      */
+	public static boolean czyIstniejeTrojkat(float a, float b, float c){
+                  if (a + b <= c) return false;
+                  if (a + c <= b) return false;
+                  if (b + c <= a) return false;
+                  return true;
+               }
     public static void jakiTrojkat(float a, float b, float c){
          if (a == b && b == c) {
              System.out.println("Trójkąt równoboczny"); 
@@ -38,6 +44,10 @@ class Trojkaty {
 		System.out.println("Dlugosci bokow trojkata musza byc nieujemne!");
 		System.exit(2);
 	}
+	if (!czyIstniejeTrojkat(a, b, c)) {
+                    System.out.println("Z podanych długości boków nie da się zbudować trójkąta");
+                    System.exit(3);
+                   }
 
         jakiTrojkat(a, b, c);
     }
